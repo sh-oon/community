@@ -12,9 +12,8 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/community" element={<News />} />
-        <Route path="/news" element={<Community />} />
+        <Route path="/" element={<Home />} /> 
+        <Route path="/news" element={<News />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
