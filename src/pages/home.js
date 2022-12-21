@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import stationData from "./stationInfo.json";
+import { initConnection } from "../service/socketService";
 
 export default function Home() {
   const [stationLine, setStationLine] = useState("");
   const stationDataList = stationData.DATA;
   useEffect(() => {
-    console.log("hi");
+    initConnection(1, "myname", false);
   }, []);
   return (
     <MainWrapper>
