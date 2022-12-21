@@ -5,14 +5,13 @@ import NotFoundPage from "./pages/404";
 import "./css/global.css";
 import Home from "./pages/home";
 import News from "./pages/news";
-import Community from "./pages/community";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} /> 
+        <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
