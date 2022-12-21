@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import stationData from "./stationInfo.json";
+import { initConnection } from "../service/socketService";
 
 export default function Home() {
   const [stationLine, setStationLine] = useState("");
