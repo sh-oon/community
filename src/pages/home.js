@@ -7,7 +7,7 @@ export default function Home() {
   const [stationLine, setStationLine] = useState("");
   const stationDataList = stationData.DATA;
   useEffect(() => {
-    console.log("hi");
+    initConnection(1, "myname", false);
   }, []);
   return (
     <MainWrapper>
