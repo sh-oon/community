@@ -3,34 +3,31 @@ import styled from "styled-components";
 import stationData from "./stationInfo.json";
 
 export default function Home() {
-  const [station, setStation] = useState("");
-  const [stationLine, setStationLine] = useState("02호선");
+  const [stationLine, setStationLine] = useState("");
   const stationDataList = stationData.DATA;
+  useEffect(() => {
+    console.log("hi");
+  }, []);
   return (
     <MainWrapper>
-      {station ? <h1>{station}</h1> : <h1>Choose a station</h1>}
+      <h1>지하철역 검색</h1>
 
-      {[
-        ...new Set(
-          stationDataList.map((data) => {
-            return data.line;
-          })
-        ),
-      ].map((line, index) => (
-        <span
-          key={index}
-          style={{
-            display: "inline-block",
-            padding: "0.5rem",
-            cursor: "pointer",
-          }}
-          onClick={() => {
-            setStationLine(line);
-          }}
-        >
-          {line}
-        </span>
-      ))}
+      <select onChange={(e) => setStationLine(e.target.value)}>
+        <option value="">지하철호선 선택하세요</option>
+        <option value="01호선">1호선</option>
+        <option value="02호선">2호선</option>
+        <option value="03호선">3호선</option>
+        <option value="04호선">4호선</option>
+        <option value="05호선">5호선</option>
+        <option value="06호선">6호선</option>
+        <option value="07호선">7호선</option>
+        <option value="08호선">8호선</option>
+        <option value="09호선">9호선</option>
+      </select>
+
+      <h2>노선</h2>
+
+      <div></div>
       <div
         style={{
           display: "flex",
