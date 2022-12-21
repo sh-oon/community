@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import stationData from "./stationInfo.json";
+import { initConnection } from "../service/socketService";
 
 export default function Home() {
+  useEffect(() => {
+    initConnection(1,'It',false)
+  }, []);
   const [station, setStation] = useState("");
   const [stationLine, setStationLine] = useState("02호선");
   const stationDataList = stationData.DATA;
